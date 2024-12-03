@@ -83,13 +83,18 @@ def play_spades():
                     print(f'Index is {i}, card is {card}\n')
 
                 card_select =  int(input('From the cards above pick one to select: '))
+                #Appends the card selected to current pile
 
-                current_pile.append(card_select)
+                current_pile.append(player.deck[card_select])
 
-            #Need to remove a card from players hand based on the index. player_game[turn].deck.pop(insert index here)
+                #Removes card from players hand
+
                 player.deck.pop(card_select)
+                
+                #Displays current pile
 
                 print(len(player.deck))
+                print(current_pile)
 
 
             turn +=1
