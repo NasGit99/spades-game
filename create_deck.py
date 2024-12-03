@@ -67,7 +67,6 @@ def play_spades():
 
     #while team_1 or team_2 < 300:
 
-    print('Player 1 goes\n')
 
     current_pile =[]
 
@@ -76,19 +75,35 @@ def play_spades():
 
     while rounds < 14:
         while turn <4:
-            for player in player_game:
-                for i, card in enumerate(player[turn].deck):
+            #picks the players in order
+            for player in player_game[turn]:
+                print(f'{player.name},  is playing')
+                #Grabs their deck and list out the index
+                for i, card in enumerate(player.deck):
                     print(f'Index is {i}, card is {card}\n')
 
-            card_select = input ('From the cards above pick one to select')
+                card_select =  int(input('From the cards above pick one to select: '))
 
-            current_pile.append(card_select)
+                current_pile.append(card_select)
+
+            #Need to remove a card from players hand based on the index. player_game[turn].deck.pop(insert index here)
+                player.deck.pop(card_select)
+
+                print(len(player.deck))
+
 
             turn +=1
+            #Determine the winner here, also need a function that determines winners of face cards
 
-        #Determine the winner here, also need a function that determines winners of face cards
+    turn -3
+
+
+        #If the highest value is either index 0 or 2 or index 1 or 3  then give a point for that team
             
-        rounds +=1
+    rounds +=1
+
+    team_1_books = 0
+    team_2_books = 0
 
 play_spades()
 
