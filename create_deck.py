@@ -58,60 +58,6 @@ def create_players():
     return player_list
 
 
-def play_spades():
-
-    player_game = create_players()
-    
-    team_1 = 0
-    team_2 = 0
-
-    #while team_1 or team_2 < 300:
-
-
-    current_pile =[]
-
-    turn = 0
-    rounds = 0
-
-    while rounds < 14:
-        while turn <4:
-            #picks the players in order
-            for player in player_game[turn]:
-                print(f'{player.name},  is playing')
-                #Grabs their deck and list out the index
-                for i, card in enumerate(player.deck):
-                    print(f'Index is {i}, card is {card}\n')
-
-                card_select =  int(input('From the cards above pick one to select: '))
-                #Appends the card selected to current pile
-
-                current_pile.append(player.deck[card_select])
-
-                #Removes card from players hand
-
-                player.deck.pop(card_select)
-                
-                #Displays current pile
-
-                print(len(player.deck))
-                print(current_pile)
-
-
-            turn +=1
-            #Determine the winner here, also need a function that determines winners of face cards
-
-    turn -3
-
-
-        #If the highest value is either index 0 or 2 or index 1 or 3  then give a point for that team
-            
-    rounds +=1
-
-    team_1_books = 0
-    team_2_books = 0
-
-play_spades()
-
     
 
 
